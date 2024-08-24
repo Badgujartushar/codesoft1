@@ -1,0 +1,42 @@
+#include <iostream.h>
+#include <stdlib.h>
+#include <time.h>
+#include <conio.h>
+
+
+void main()
+ {
+    srand(time(0)); // Seed the random number generator
+    int Guessno=rand()%100+1; // Generate a random number between 1 and 100
+    int guess;
+    int attempts=0;
+    clrscr();
+
+    cout<<"Guess a number between 1 and 100:"<< endl;
+
+    do {
+	cin>>guess;
+	attempts++;
+
+	if(guess < Guessno)
+
+	    cout << "Too low! Try again." << endl;
+
+	 else
+	  if (guess > Guessno)
+
+	    cout << "Too high! Try again." << endl;
+
+	 else
+	{
+	cout<<"\n Congratulations! You found the number in " << attempts << " attempts." << endl;
+
+	}
+    }
+     while (guess != Guessno);
+
+
+
+    getch();
+
+}
